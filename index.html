@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Rose Day ❤️</title>
+<title>Rose Day Surprise </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -10,17 +10,56 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
+  font-family: Arial, sans-serif;
 }
 
 body{
   height:100vh;
   overflow:hidden;
   background: linear-gradient(135deg,#ff5f9e,#ff9a9e);
-  font-family: Arial, sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
   color:white;
+}
+
+/* hide checkbox */
+#toggle{
+  display:none;
+}
+
+/* First screen */
+.start{
+  text-align:center;
+}
+
+.start label{
+  background:white;
+  color:#ff3f7f;
+  padding:15px 30px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* Surprise screen hidden */
+.surprise{
+  display:none;
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Show surprise after click */
+#toggle:checked ~ .surprise{
+  display:flex;
+}
+
+#toggle:checked ~ .start{
+  display:none;
 }
 
 /* Card */
@@ -47,8 +86,8 @@ body{
 /* Hearts */
 .hearts span{
   position:absolute;
-  bottom:-50px;
-  font-size:24px;
+  bottom:-40px;
+  font-size:22px;
   animation:float 6s linear infinite;
 }
 
@@ -68,19 +107,27 @@ body{
 
 <body>
 
-<div class="card">
-  <div class="rose">🌹</div>
-  <h1>Happy Rose Day ❤️</h1>
-  <p>This rose is only for you 💖</p>
+<input type="checkbox" id="toggle">
+
+<!-- First screen -->
+<div class="start">
+  <h1> A Small Surprise </h1>
+  <br>
+  <label for="toggle">Click here for surprise </label>
 </div>
 
-<div class="hearts">
-  <span>❤️</span>
-  <span>❤️</span>
-  <span>❤️</span>
-  <span>❤️</span>
-  <span>❤️</span>
-  <span>❤️</span>
+<!-- Surprise screen -->
+<div class="surprise">
+  <div class="card">
+    <div class="rose"></div>
+    <h1>Happy Rose Day </h1>
+    <p>This rose is only for you </p>
+  </div>
+
+  <div class="hearts">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
 </div>
 
 </body>
