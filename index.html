@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  background: linear-gradient(135deg,#ff5f9e,#ff9a9e);
+  font-family: Arial, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+/* Card */
+.card{
+  background: rgba(0,0,0,0.3);
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  z-index:10;
+}
+
+/* Rose pulse */
+.rose{
+  font-size:60px;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+  100%{transform:scale(1);}
+}
+
+/* Hearts */
+.hearts span{
+  position:absolute;
+  bottom:-50px;
+  font-size:24px;
+  animation:float 6s linear infinite;
+}
+
+.hearts span:nth-child(1){left:10%;animation-delay:0s;}
+.hearts span:nth-child(2){left:25%;animation-delay:1s;}
+.hearts span:nth-child(3){left:40%;animation-delay:2s;}
+.hearts span:nth-child(4){left:55%;animation-delay:3s;}
+.hearts span:nth-child(5){left:70%;animation-delay:4s;}
+.hearts span:nth-child(6){left:85%;animation-delay:5s;}
+
+@keyframes float{
+  0%{transform:translateY(0);opacity:1;}
+  100%{transform:translateY(-120vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="rose">🌹</div>
+  <h1>Happy Rose Day ❤️</h1>
+  <p>This rose is only for you 💖</p>
+</div>
+
+<div class="hearts">
+  <span>❤️</span>
+  <span>❤️</span>
+  <span>❤️</span>
+  <span>❤️</span>
+  <span>❤️</span>
+  <span>❤️</span>
+</div>
+
+</body>
+</html>
